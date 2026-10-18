@@ -1,0 +1,7 @@
+[
+  { "id": "civil-code-2020", "sourceId": "state-tax-official-laws", "title": "中华人民共和国民法典", "documentType": "STATUTE", "issuingAuthority": "全国人民代表大会", "officialUrl": "https://fgk.chinatax.gov.cn/zcfgk/c100009/c5212250/content.html", "parser": "TAX" },
+  { "id": "civil-code-general-2022", "sourceId": "supreme-court-official", "title": "最高人民法院关于适用《中华人民共和国民法典》总则编若干问题的解释", "documentType": "JUDICIAL_INTERPRETATION", "issuingAuthority": "最高人民法院", "officialUrl": "https://cicc.court.gov.cn/html/1/380/385/12832.html", "parser": "CICC" },
+  { "id": "civil-procedure-interpretation-2022", "sourceId": "supreme-court-official", "title": "最高人民法院关于适用《中华人民共和国民事诉讼法》的解释", "documentType": "JUDICIAL_INTERPRETATION", "issuingAuthority": "最高人民法院", "officialUrl": "https://cicc.court.gov.cn/html/1/380/385/12829.html", "parser": "CICC" },
+  { "id": "private-lending-interpretation-2020", "sourceId": "supreme-court-official", "title": "最高人民法院关于审理民间借贷案件适用法律若干问题的规定", "documentType": "JUDICIAL_INTERPRETATION", "issuingAuthority": "最高人民法院", "officialUrl": "https://cicc.court.gov.cn/html/1/218/62/84/12844.html", "parser": "CICC", "expectedArticleCount": 31 },
+  { "id": "civil-limitation-2020", "sourceId": "supreme-court-official", "title": "最高人民法院关于审理民事案件适用诉讼时效制度若干问题的规定", "documentType": "JUDICIAL_INTERPRETATION", "issuingAuthority": "最高人民法院", "officialUrl": "https://cicc.court.gov.cn/html/1/380/385/12837.html", "parser": "CICC" }
+]

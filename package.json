@@ -1,0 +1,38 @@
+{
+  "name": "chinese-legal-assistant-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "case:report": "node --import tsx src/report/userReportCli.ts",
+    "case:evidence": "node --import tsx src/caseEvidence/cli.ts",
+    "dev": "node --env-file-if-exists=.env --import tsx src/index.ts",
+    "build": "node scripts/build.mjs",
+    "prestart": "npm run build",
+    "start": "node --env-file-if-exists=.env dist/index.js",
+    "research": "node --env-file-if-exists=.env --import tsx src/research.ts",
+    "authority:import": "node --env-file-if-exists=.env --import tsx scripts/importAuthorities.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import ./scripts/workbenchOfflineGuard.mjs --import tsx --test test/*.test.ts",
+    "predemo": "npm run build",
+    "demo": "node --import ./scripts/workbenchOfflineGuard.mjs dist/demo/server.js"
+  },
+  "dependencies": {
+    "docx": "^9.7.1",
+    "fastify": "^5.6.1",
+    "parse5": "8.0.1",
+    "pdfjs-dist": "^6.3.289",
+    "pdfkit": "^0.20.2",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/pdfkit": "^0.17.6",
+    "jszip": "^3.10.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

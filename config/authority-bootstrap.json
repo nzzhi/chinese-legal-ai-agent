@@ -1,0 +1,12 @@
+[
+  {
+    "id": "civil-code-2020",
+    "sourceId": "fujian-official-republication",
+    "title": "中华人民共和国民法典",
+    "documentType": "STATUTE",
+    "issuingAuthority": "全国人民代表大会",
+    "officialUrl": "https://zrzyt.fujian.gov.cn/zwgk/zcfg/flfg/202304/t20230403_6143511.htm",
+    "parser": "FUJIAN",
+    "expectedArticleCount": 1260
+  }
+]

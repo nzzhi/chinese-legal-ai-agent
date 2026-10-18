@@ -1,0 +1,10 @@
+[
+  { "id": "national-law-database", "hosts": ["flk.npc.gov.cn"], "documentTypes": ["STATUTE", "ADMINISTRATIVE_REGULATION", "JUDICIAL_INTERPRETATION", "NORMATIVE_DOCUMENT"], "acquisitionMode": "MANUAL_ONLY" },
+  { "id": "state-tax-official-laws", "hosts": ["fgk.chinatax.gov.cn"], "documentTypes": ["STATUTE", "ADMINISTRATIVE_REGULATION", "NORMATIVE_DOCUMENT"], "acquisitionMode": "MANUAL_ONLY" },
+  { "id": "supreme-court-official", "hosts": ["cicc.court.gov.cn", "www.court.gov.cn"], "documentTypes": ["STATUTE", "JUDICIAL_INTERPRETATION", "NORMATIVE_DOCUMENT"], "acquisitionMode": "AUTOMATIC" },
+  { "id": "state-council-official", "hosts": ["www.gov.cn"], "documentTypes": ["STATUTE", "ADMINISTRATIVE_REGULATION", "NORMATIVE_DOCUMENT"], "acquisitionMode": "AUTOMATIC" },
+  { "id": "commerce-policy-database", "hosts": ["policy.mofcom.gov.cn"], "documentTypes": ["STATUTE", "ADMINISTRATIVE_REGULATION", "NORMATIVE_DOCUMENT"], "acquisitionMode": "MANUAL_ONLY" },
+  { "id": "fujian-official-republication", "hosts": ["zrzyt.fujian.gov.cn"], "documentTypes": ["STATUTE"], "acquisitionMode": "AUTOMATIC" },
+  { "id": "beijing-official-republication", "hosts": ["www.beijing.gov.cn"], "documentTypes": ["ADMINISTRATIVE_REGULATION"], "acquisitionMode": "MANUAL_ONLY" },
+  { "id": "state-administrative-regulation-database", "hosts": ["xzfg.moj.gov.cn"], "documentTypes": ["ADMINISTRATIVE_REGULATION"], "acquisitionMode": "MANUAL_ONLY" }
+]

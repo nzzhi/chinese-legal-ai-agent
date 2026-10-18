@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Chinese · AI 法律助手</title>
+    <link rel="stylesheet" href="/workbench.css" />
+  </head>
+  <body>
+    <svg class="svg-sprite" aria-hidden="true"><symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M4 7h16M6 7l-3 7h6L6 7m12 0-3 7h6l-3-7"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol><symbol id="i-more" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M8 12h8"/></symbol><symbol id="i-panel" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M8 12h8"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="m7 4 13 8-13 8Z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol><symbol id="i-copy" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M8 12h8"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M8 12h8"/></symbol><symbol id="i-paperclip" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M8 12h8"/></symbol><symbol id="i-chevron" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M8 12h8"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5Z M9 11h6M9 15h6"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M8 12h8"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v7h5"/></symbol><symbol id="i-settings" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M8 12h8"/></symbol></svg>
+
+    <div class="app-shell">
+      <header class="titlebar">
+        <div class="brand"><span class="brand-mark"><svg><use href="#i-scale"/></svg></span><span>衡简</span><span class="brand-product">AI 法律助手</span></div>
+        <div class="environment"><span class="pulse"></span><span id="execution-status" role="status">运行环境待确认</span><span class="mock-label">作品集 · 本地原型</span></div>
+        <div class="title-actions">
+          <button class="icon-button" aria-label="设置"><svg><use href="#i-settings"/></svg></button>
+          <div class="avatar" aria-label="演示身份">DEMO</div>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="case-sidebar">
+          <div class="sidebar-toolbar">
+            <h1>案件</h1>
+            <button id="new-case" class="icon-button" aria-label="新建案件"><svg><use href="#i-plus"/></svg></button>
+          </div>
+          <label class="search-box">
+            <svg><use href="#i-search"/></svg>
+            <input id="case-search" type="search" placeholder="搜索案件" />
+            <kbd>⌘ K</kbd>
+          </label>
+          <nav class="case-filters" aria-label="案件筛选">
+            <button id="import-research" class="filter active">导入研究 JSON</button>
+          </nav>
+          <div id="case-list" class="case-list" role="list"></div>
+          <div class="sidebar-footer"><svg><use href="#i-clock"/></svg><span>最近同步</span><time>刚刚</time></div>
+        </aside>
+
+        <section class="conversation-panel">
+          <header class="case-header">
+            <div class="case-heading">
+              <div class="eyebrow"><span id="case-number">本地案件</span><span>·</span><span id="case-type">案件材料中心</span></div>
+              <p id="research-help" role="status"></p><h2 id="case-title">输入案情，创建案件</h2>
+              <select id="mobile-case-select" class="mobile-only" aria-label="切换案件"></select>
+            </div>
+            <div class="case-actions">
+              <label>分析模式<select id="analysis-mode" aria-label="分析模式"><option value="PRELIMINARY">初步分析</option><option value="STRICT">深度研究</option></select></label>
+              <button id="run-research" aria-describedby="research-help" class="primary-button" title="启动法律研究" disabled><svg><use href="#i-play"/></svg><span>启动法律研究</span></button>
+              <button class="icon-button" data-import aria-label="导入已有研究"><svg><use href="#i-plus"/></svg></button>
+              <button id="toggle-inspector" class="icon-button mobile-only" aria-label="查看案件资料" aria-controls="inspector" aria-expanded="false"><svg><use href="#i-panel"/></svg></button>
+            </div>
+          </header>
+
+          <div class="thread" id="thread"><div class="empty-state"><p>自然描述案情，可选上传证据，直接生成初步法律分析。</p></div></div>
+
+          <footer class="composer-wrap">
+            <div class="context-strip"><span class="context-status">材料保存到本机，解析与确认记录可追踪</span></div>
+            <form id="composer" class="composer">
+              <textarea id="message-input" rows="3" maxlength="20000" aria-label="案件描述" placeholder="说明双方关系、发生经过、金额、时间和希望解决的问题"></textarea>
+              <div class="composer-actions">
+                <div><button type="button" class="icon-button" aria-label="添加附件"><svg><use href="#i-paperclip"/></svg></button><span class="model-button">案情 → 术语 → 法源 → 报告</span></div>
+                <button type="submit" class="send-button" aria-label="创建案件"><svg><use href="#i-send"/></svg></button>
+              </div>
+            </form>
+            <p class="disclaimer">创建案件与启动研究会使用已配置的模型服务；材料原文登记在本机。用户确认不等于法院认定真实。</p>
+          </footer>
+        </section>
+
+        <aside class="inspector" id="inspector">
+          <div class="inspector-tabs" role="tablist">
+            <button class="inspector-tab" data-tab="facts" role="tab">事实 <span>0</span></button>
+            <button class="inspector-tab active" data-tab="evidence" role="tab">材料 <span>0</span></button>
+            <button class="inspector-tab" data-tab="law" role="tab">法律依据 <span>0</span></button>
+            <button class="inspector-tab" data-tab="report" role="tab">报告</button>
+            <button id="close-inspector" class="secondary-button mobile-only" aria-label="关闭案件资料，返回报告">返回报告 ×</button>
+          </div>
+          <div id="inspector-content" class="inspector-content"></div>
+        </aside>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status"></div>
+    <input id="research-import" type="file" accept=".json,application/json" hidden />
+    <input id="material-upload" type="file" accept=".png,.jpg,.jpeg,.pdf,.txt,.md" hidden />
+    <dialog id="material-dialog" aria-label="材料内容与事实关联"></dialog>
+    <script src="/workbench.js"></script>
+    <script src="/portfolio-demo.js"></script>
+  </body>
+</html>
